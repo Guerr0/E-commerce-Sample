@@ -8,6 +8,7 @@ import { Product } from './products';
 })
 export class CartService {
 
+  totalPrice : number = 0; 
   items: Product[] = [];
 
   constructor(private http: HttpClient) { }
@@ -28,4 +29,13 @@ export class CartService {
   getShippingPrices() {
     return this.http.get<{type: string, price: number}[]>('/assets/shipping.json');
   }
+
+  getTotalPrice(){
+    return this.totalPrice;
+  }
+
+  updateTotalPrice(price : number){
+    this.totalPrice= this.totalPrice + price;
+  }
+
 }

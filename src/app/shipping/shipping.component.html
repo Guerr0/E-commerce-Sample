@@ -1,6 +1,8 @@
-<h3> shipping prices </h3>
+<h3>SELECT Shipping prices</h3>
 
 <div class="shipping-item" *ngFor="let shipping of shippingCosts | async">
-  <span>{{ shipping.type }}</span>
+  <span>{{ shipping.type }}</span> 
   <span>{{ shipping.price | currency }}</span>
+  <button (click)="addShippingCost(shipping.price)"></button>
 </div>
+

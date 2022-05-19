@@ -3,7 +3,11 @@
   <span>{{ item.name }}</span>
   <span>{{ item.price | currency }}</span>
 </div>
-
+<div>
 <p>
-  <a routerLink="/shipping">Shipping Prices</a>
+  <app-shipping> </app-shipping>
 </p>
+
+<p> {{totalPrice}} </p>
+</div>
+
