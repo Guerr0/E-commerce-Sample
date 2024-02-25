@@ -3,6 +3,6 @@
 <div class="shipping-item" *ngFor="let shipping of shippingCosts | async">
   <span>{{ shipping.type }}</span> 
   <span>{{ shipping.price | currency }}</span>
-  <button (click)="addShippingCost(shipping.price)"></button>
+  <button (click)="addShippingCost(shipping.price)"><mat-icon> local_shipping</mat-icon></button>
 </div>
 
