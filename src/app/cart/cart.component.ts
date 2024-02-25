@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 import { CartService } from '../cart.service';
+import { Product } from '../products';
 
 @Component({
   selector: 'app-cart',
@@ -9,20 +10,24 @@ import { CartService } from '../cart.service';
   styleUrls: ['./cart.component.css'],
 })
 export class CartComponent implements OnInit {
-  items = this.cartService.getItems();
-  totalPrice = this.cartService.getTotalPrice();
-  
-  checkoutForm = this.formBuilder.group({
-    name: '',
-    address: '',
-  });
+  items: Product[];
+  totalPrice: number;
 
+  checkoutForm: FormGroup<any>
   constructor(
     private cartService: CartService,
     private formBuilder: FormBuilder
-  ) {}
+  ) {
+    this.items = this.cartService.getItems();
+    this.totalPrice = this.cartService.getTotalPrice()
 
-  ngOnInit(): void {}
+    this.checkoutForm = this.formBuilder.group({
+      name: '',
+      address: '',
+    });
+  }
+
+  ngOnInit(): void { }
 
   onSubmit(): void {
     this.items = this.cartService.clearCart();
