@@ -9,10 +9,8 @@ import { Product } from '../products';
 export class ProductAlertsComponent implements OnInit {
 
   @Input() product!: Product;
-  @Input() parola!: String;
   @Output() notify = new EventEmitter();
 
-  
 
   constructor() { }
 

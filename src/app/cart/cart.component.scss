@@ -1,0 +1,25 @@
+/* Checkout Cart, Shipping Prices */
+
+@media screen and (min-width: 992px) {
+    .cart-container {
+        width: 20% !important;
+    }
+}
+
+.cart-container {
+    width: 100%;
+}
+
+.cart-item {
+    width: 100%;
+    // min-width: 400px;
+    // max-width: 450px;
+    // display: flex;
+    // align-items: center;
+    // flex-direction: row;
+    // justify-content: space-between;
+    padding: 16px 32px;
+    margin-bottom: 8px;
+    border-radius: 2px;
+    background-color: #EEEEEE;
+}

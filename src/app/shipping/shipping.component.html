@@ -1,8 +1,9 @@
 <h3>Select Shipping type</h3>
 
-<div class="shipping-item" *ngFor="let shipping of shippingCosts | async">
-  <span>{{ shipping.type }}</span> 
-  <span>{{ shipping.price | currency }}</span>
-  <button (click)="addShippingCost(shipping.price)"><mat-icon> local_shipping</mat-icon></button>
-</div>
+<div class="shipping-item" fxLayout="row" fxLayoutAlign="none center" *ngFor="let shipping of shippingCosts | async">
+  <span fxFlex="0 0 50">{{ shipping.type }}</span>
+  <span fxFlex="0 0 30">{{ shipping.price | currency }}</span>
+  <span fxFlex="0 0 20"> <button (click)="addShippingCost(shipping.price)"><mat-icon> local_shipping</mat-icon></button>
+  </span>
 
+</div>

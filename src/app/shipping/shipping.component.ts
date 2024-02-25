@@ -21,7 +21,6 @@ export class ShippingComponent implements OnInit {
 
   addShippingCost(price : number){
     this.cartService.updateTotalPrice(price);
-    alert(this.cartService.totalPrice);
   }
 
 }
